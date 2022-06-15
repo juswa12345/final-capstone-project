@@ -11,10 +11,14 @@ import 'package:project_management/widgets/drop_down.dart';
 import 'package:project_management/widgets/time_picker.dart';
 
 class WorkingTimePage extends StatelessWidget {
-  const WorkingTimePage({Key? key, required this.isPause}) : super(key: key);
+  const WorkingTimePage({
+    Key? key,
+    required this.isPause,
+    required this.imgUrl,
+  }) : super(key: key);
 
   final bool isPause;
-
+  final String imgUrl;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,11 +43,14 @@ class WorkingTimePage extends StatelessWidget {
                       ),
                       const DropDownSelection(hintText: kAddPojectNumber),
                       const SizedBox(height: 32.0),
-                      const CustomSelectorWidget(
+                      CustomSelectorWidget(
                         title: kEmployee,
                         subTitle: kAddOrEdit,
                         color: black,
-                        route: BreakPage(),
+                        route: Scaffold(
+                            body: Container(
+                          color: white,
+                        )),
                       ),
                       const SizedBox(height: 32.0),
                       Text(
@@ -76,27 +83,27 @@ class WorkingTimePage extends StatelessWidget {
             ),
             !isPause
                 ? Column(
-                    children: const [
-                      SizedBox(height: 32.0),
+                    children: [
+                      const SizedBox(height: 32.0),
                       CustomSelectorWidget(
                         title: kBreak,
                         subTitle: kAddOrEdit,
                         color: violet,
-                        route: BreakPage(),
+                        route: BreakPage(imgUrl: imgUrl),
                       ),
-                      SizedBox(height: 32.0),
+                      const SizedBox(height: 32.0),
                       CustomSelectorWidget(
                         title: kWaitingPeriod,
                         subTitle: kAddOrEdit,
                         color: yellow,
-                        route: WaitingPeriod(),
+                        route: WaitingPeriod(imgUrl: imgUrl),
                       ),
-                      SizedBox(height: 32.0),
+                      const SizedBox(height: 32.0),
                       CustomSelectorWidget(
                         title: kStandBy,
                         subTitle: kAddOrEdit,
                         color: purple,
-                        route: StandBy(),
+                        route: StandBy(imgUrl: imgUrl),
                       ),
                     ],
                   )
@@ -105,7 +112,7 @@ class WorkingTimePage extends StatelessWidget {
             Container(
               color: grey,
               padding: paddingAllSmall,
-              child: const CommentTile(),
+              child: CommentTile(imgUrl: imgUrl),
             ),
             const SizedBox(height: 32.0),
             Row(

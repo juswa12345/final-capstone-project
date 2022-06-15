@@ -4,18 +4,22 @@ import 'package:project_management/utilities/constant_string.dart';
 class CommentTile extends StatelessWidget {
   const CommentTile({
     Key? key,
+    required this.imgUrl,
   }) : super(key: key);
+
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Column(
-          children: const [
+          children: [
             CircleAvatar(
               radius: 25.0,
+              backgroundImage: AssetImage(imgUrl),
             ),
-            SizedBox(height: 53.0),
+            const SizedBox(height: 53.0),
           ],
         ),
         const SizedBox(width: 15.0),

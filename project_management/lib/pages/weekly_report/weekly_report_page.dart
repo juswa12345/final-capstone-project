@@ -4,9 +4,8 @@ import 'package:project_management/utilities/app_bar_design.dart';
 import 'package:project_management/utilities/constant_string.dart';
 
 class WeeklyReportPage extends StatefulWidget {
-  const WeeklyReportPage({Key? key}) : super(key: key);
-
-  static const routeName = '/weeklyReportPage';
+  const WeeklyReportPage({Key? key, required this.imgUrl}) : super(key: key);
+  final String imgUrl;
   @override
   State<WeeklyReportPage> createState() => _WeeklyReportPageState();
 }
@@ -53,7 +52,9 @@ class _WeeklyReportPageState extends State<WeeklyReportPage> with SingleTickerPr
           current == 0
               ? Padding(
                   padding: paddingTop,
-                  child: const Calendar(),
+                  child: Calendar(
+                    imgUrl: widget.imgUrl,
+                  ),
                 )
               : Container()
         ],

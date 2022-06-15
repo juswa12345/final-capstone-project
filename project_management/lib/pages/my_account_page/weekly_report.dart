@@ -5,7 +5,9 @@ import 'package:project_management/utilities/my_flutter_app_icons.dart';
 import 'package:project_management/widgets/black_button.dart';
 
 class WeeklyReport extends StatelessWidget {
-  const WeeklyReport({Key? key}) : super(key: key);
+  const WeeklyReport({Key? key, required this.imgUrl}) : super(key: key);
+
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,10 @@ class WeeklyReport extends StatelessWidget {
                 ),
                 const SizedBox(height: 10.0),
                 GestureDetector(
-                  onTap: () => Navigator.of(context).pushNamed(WeeklyReportPage.routeName),
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WeeklyReportPage(imgUrl: imgUrl)),
+                  ),
                   child: const BlackButton(
                     title: kSendWeeklyReport,
                     icon: MyFlutterApp.paper_plane_white,

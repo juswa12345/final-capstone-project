@@ -4,12 +4,12 @@ import 'package:project_management/utilities/app_bar_design.dart';
 import 'package:project_management/utilities/constant_string.dart';
 
 class AddTimeTrack extends StatefulWidget {
-  const AddTimeTrack({Key? key}) : super(key: key);
+  const AddTimeTrack({Key? key, required this.imgUrl}) : super(key: key);
 
   @override
   State<AddTimeTrack> createState() => _AddTimeTrackState();
 
-  static const routeName = '/addTrack';
+  final String imgUrl;
 }
 
 class _AddTimeTrackState extends State<AddTimeTrack> with SingleTickerProviderStateMixin {
@@ -57,7 +57,15 @@ class _AddTimeTrackState extends State<AddTimeTrack> with SingleTickerProviderSt
                   ],
                 ),
               ),
-              current == 0 ? WorkingTimePage(isPause: isPause) : WorkingTimePage(isPause: isPause),
+              current == 0
+                  ? WorkingTimePage(
+                      isPause: isPause,
+                      imgUrl: widget.imgUrl,
+                    )
+                  : WorkingTimePage(
+                      isPause: isPause,
+                      imgUrl: widget.imgUrl,
+                    ),
             ],
           ),
         ),

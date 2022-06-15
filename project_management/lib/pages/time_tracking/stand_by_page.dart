@@ -8,8 +8,12 @@ import 'package:project_management/widgets/drop_down.dart';
 import 'package:project_management/widgets/time_picker.dart';
 
 class StandBy extends StatelessWidget {
-  const StandBy({Key? key}) : super(key: key);
+  const StandBy({
+    Key? key,
+    required this.imgUrl,
+  }) : super(key: key);
 
+  final String imgUrl;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +55,9 @@ class StandBy extends StatelessWidget {
               Container(
                 color: grey,
                 padding: paddingAllSmall,
-                child: const CommentTile(),
+                child: CommentTile(
+                  imgUrl: imgUrl,
+                ),
               ),
               const SizedBox(height: 32.0),
               Row(

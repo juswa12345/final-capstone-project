@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_management/models/user_data/user_data.dart';
 import 'package:project_management/pages/time_tracking/add_time_track.dart';
 import 'package:project_management/utilities/constant_string.dart';
 import 'package:project_management/utilities/my_flutter_app_icons.dart';
@@ -36,7 +37,13 @@ PreferredSizeWidget appbarHomePage(GlobalKey<ScaffoldState> key) {
   );
 }
 
-Container appbarTimeTracking(BuildContext context, GlobalKey<ScaffoldState> key, String timeTable, bool isSended) {
+Container appbarTimeTracking(
+  BuildContext context,
+  GlobalKey<ScaffoldState> key,
+  String timeTable,
+  bool isSended,
+  UserData user,
+) {
   return Container(
     color: white,
     child: Padding(
@@ -96,7 +103,14 @@ Container appbarTimeTracking(BuildContext context, GlobalKey<ScaffoldState> key,
               ),
               const SizedBox(width: 10.0),
               GestureDetector(
-                onTap: () => Navigator.of(context).pushNamed(AddTimeTrack.routeName),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddTimeTrack(
+                      imgUrl: user.imgUrl,
+                    ),
+                  ),
+                ),
                 child: const CircleAvatar(
                   backgroundColor: Color(0xFFD3D3D3),
                   foregroundColor: Color(0xff000000),

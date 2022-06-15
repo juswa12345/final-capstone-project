@@ -8,7 +8,9 @@ import 'package:project_management/widgets/drop_down.dart';
 import 'package:project_management/widgets/time_picker.dart';
 
 class BreakPage extends StatelessWidget {
-  const BreakPage({Key? key}) : super(key: key);
+  const BreakPage({Key? key, required this.imgUrl}) : super(key: key);
+
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,7 @@ class BreakPage extends StatelessWidget {
               Container(
                 color: grey,
                 padding: paddingAllSmall,
-                child: const CommentTile(),
+                child: CommentTile(imgUrl: imgUrl),
               ),
               const SizedBox(height: 32.0),
               Row(

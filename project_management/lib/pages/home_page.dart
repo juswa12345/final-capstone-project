@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                                 user: userData[0],
                                 supData: superiorData[0],
                               )
-                            : const TimeTrackingPage(),
+                            : TimeTrackingPage(user: userData[0]),
                     loading: () => const Center(child: CircularProgressIndicator()),
                     error: (message) => Center(child: Text(message!)),
                   ),

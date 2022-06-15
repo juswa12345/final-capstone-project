@@ -50,7 +50,9 @@ class MyAccountPageTablet extends StatelessWidget {
                             user: user,
                           ),
                           SuperiorTile(supData: supData),
-                          const WeeklyReport(),
+                          WeeklyReport(
+                            imgUrl: user.imgUrl,
+                          ),
                           const MonthlyReport(),
                           const SizedBox(height: 15.0)
                         ],

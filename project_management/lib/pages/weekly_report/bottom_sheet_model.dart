@@ -8,7 +8,9 @@ import 'package:project_management/widgets/drop_down.dart';
 class BottomModalSheet extends StatelessWidget {
   const BottomModalSheet({
     Key? key,
+    required this.imgUrl,
   }) : super(key: key);
+  final String imgUrl;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -85,7 +87,9 @@ class BottomModalSheet extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16.0),
-              const CommentTile(),
+              CommentTile(
+                imgUrl: imgUrl,
+              ),
               Padding(
                 padding: paddingTop,
                 child: const DropDownSelection(hintText: kVacation),

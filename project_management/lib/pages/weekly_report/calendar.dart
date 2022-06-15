@@ -5,8 +5,9 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 
 class Calendar extends StatefulWidget {
-  const Calendar({Key? key}) : super(key: key);
+  const Calendar({Key? key, required this.imgUrl}) : super(key: key);
 
+  final String imgUrl;
   @override
   State<Calendar> createState() => _CalendarState();
 }
@@ -23,7 +24,7 @@ class _CalendarState extends State<Calendar> {
             showModalBottomSheet(
               context: context,
               builder: (_) {
-                return const BottomModalSheet();
+                return BottomModalSheet(imgUrl: widget.imgUrl);
               },
               barrierColor: Colors.transparent,
             );

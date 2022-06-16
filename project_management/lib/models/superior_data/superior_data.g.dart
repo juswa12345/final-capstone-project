@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: non_constant_identifier_names
+
 part of 'superior_data.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SuperiorData _$$_SuperiorDataFromJson(Map<String, dynamic> json) =>
-    _$_SuperiorData(
+_$_SuperiorData _$$_SuperiorDataFromJson(Map<String, dynamic> json) => _$_SuperiorData(
       firstname: json['firstname'] as String,
       lastname: json['lastname'] as String,
       email: json['email'] as String,
@@ -16,8 +17,7 @@ _$_SuperiorData _$$_SuperiorDataFromJson(Map<String, dynamic> json) =>
       number: json['number'] as List<dynamic>,
     );
 
-Map<String, dynamic> _$$_SuperiorDataToJson(_$_SuperiorData instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_SuperiorDataToJson(_$_SuperiorData instance) => <String, dynamic>{
       'firstname': instance.firstname,
       'lastname': instance.lastname,
       'email': instance.email,
